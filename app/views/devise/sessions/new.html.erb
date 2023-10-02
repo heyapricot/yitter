@@ -1,0 +1,66 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-5 col-lg-6 col-xl-4 px-lg-6 my-5 align-self-center">
+
+        <!-- Heading -->
+        <h1 class="display-4 text-center mb-3">
+          Sign in
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-body-secondary text-center mb-5">
+          Start "socializing" with us on Yitter
+        </p>
+
+        <!-- Form -->
+        <form>
+
+          <!-- Email address -->
+          <div class="form-group">
+
+            <!-- Label -->
+            <label class="form-label">
+              Email Address
+            </label>
+
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+
+                <!-- Label -->
+                <label class="form-label">
+                  Password
+                </label>
+
+              </div>
+              <div class="col-auto">
+              </div>
+            </div> <!-- / .row -->
+
+            <!-- Input group -->
+            <div class="input-group">
+
+              <!-- Input -->
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <%= f.submit "Log in", class: "btn btn-lg w-100 btn-primary mb-3" %>
+        </form>
+
+      </div>
+      <div class="col-12 col-md-7 col-lg-6 col-xl-8 d-none d-lg-block">
+
+        <!-- Image -->
+        <div class="bg-cover h-100 min-vh-100 mt-n1 me-n3" style="background-image: url(/auth-side-cover.jpg);"></div>
+
+      </div>
+    </div> <!-- / .row -->
+  </div>
+<% end %>
