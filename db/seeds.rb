@@ -1,7 +1,7 @@
 User.create!({
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  email: "main@example.com",
+  email: "user@example.com",
   password: "password",
 })
 

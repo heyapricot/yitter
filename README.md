@@ -1,24 +1,21 @@
-# README
+# Yitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install & Setup
 
-Things you may want to cover:
+Clone the codebase 
+```
+git clone https://github.com/Strety/yitter.git
+```
 
-* Ruby version
+Run the setup script to prepare DB with seed data (re-run this to reset the DB seed)
+```sh
+bin/setup
+```
 
-* System dependencies
+To run the app locally, use:
+```
+bin/dev
+```
 
-* Configuration
+Then you can login as `user@example.com` with the password `password`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
