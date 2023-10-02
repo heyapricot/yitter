@@ -14,8 +14,16 @@ User.create!({
   })
 
   sentence_count = Random.rand(10..50)
-  user.posts.create!({
+  post = user.posts.create!({
     content: Faker::Lorem.paragraph(sentence_count: sentence_count),
   })
+
+  commenters = User.all.sample(Random.rand(1..3))
+  commenters.each do |commenter|
+    post.comments.create!({
+      user: commenter,
+      body: Faker::Lorem.paragraph(sentence_count: Random.rand(1..5)),
+    })
+  end
 end
 

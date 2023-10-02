@@ -1,0 +1,39 @@
+<div class="comment my-4">
+  <div class="row">
+    <div class="col-auto">
+
+      <!-- Avatar -->
+      <a class="avatar avatar-sm" href="profile-posts.html">
+        <% avatar_image_url = "assets/img/avatars/profiles/avatar-#{comment.user.id}.jpg" %>
+        <img src="<%= avatar_image_url %>" alt="..." class="avatar-img rounded-circle">
+      </a>
+
+    </div>
+    <div class="col ms-n2">
+
+      <!-- Body -->
+      <div class="comment-body py-0">
+
+        <div class="row">
+          <div class="col">
+
+            <!-- Title -->
+            <h5 class="comment-title">
+              <%= comment.user.name %>
+            </h5>
+
+          </div>
+        </div> <!-- / .row -->
+
+        <!-- Text -->
+        <p class="comment-text">
+          <%= comment.body %>
+        </p>
+
+        <div class="border border-dark" style='width: 200px; height: 20px; border-style: dashed !important'>
+          <!-- Likes -->
+        </div>
+      </div>
+    </div>
+  </div> <!-- / .row -->
+</div>
