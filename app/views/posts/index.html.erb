@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<div class='mx-auto container row'>
+  <div class='col-8'>
+    <div class="header">
+      <div class="header-body">
 
-<h1>Posts</h1>
+        <!-- Title -->
+        <h1 class="header-title">
+          Posts
+        </h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+        <!-- Subtitle -->
+        <p class="header-subtitle">
+          Read and like posts from your network
+        </p>
+      </div>
+    </div>
+
+    <% @posts.each do |post| %>
+      <%= render partial: 'post', locals: { post: post } %>
+    <% end %>
+  </div>
+
+  <div class='col-4 mt-3'>
+    <div class='border border-dark w-100' style='height: 500px; border-style: dashed !important'>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New post", new_post_path %>

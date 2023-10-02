@@ -80,3 +80,7 @@ group :test do
   gem "shoulda", "~> 4.0"
   gem "shoulda-matchers"
 end
+
+gem "feathericon-sass", "~> 1.0"
+
+gem "name_of_person", "~> 1.1"

@@ -1,12 +1,40 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
+<div class="card" id="<%= dom_id post %>">
+  <div class="card-body">
+    <!-- Header -->
+    <div class="mb-3">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <!-- Avatar -->
+          <a href="#!" class="avatar">
+            <% avatar_image_url = "assets/img/avatars/profiles/avatar-" + post.user.id.to_s + ".jpg" %>
+            <img src="<%= avatar_image_url %>" alt="..." class="avatar-img rounded-circle">
+          </a>
+        </div>
+        <div class="col ms-n2">
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
+          <!-- Title -->
+          <h4 class="mb-1">
+            <%= post.user.name %>
+          </h4>
 
+        </div>
+      </div> <!-- / .row -->
+    </div>
+
+    <!-- Text -->
+    <p class="mb-3">
+      <%= post.content %>
+    </p>
+
+    <!-- Buttons -->
+    <div class="mb-3">
+      <div class="row">
+        <div class="col">
+          <div class="border border-dark" style='width: 200px; height: 40px; border-style: dashed !important'>
+            <!-- Like button -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
