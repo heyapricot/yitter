@@ -17,5 +17,5 @@ To run the app locally, use:
 bin/dev
 ```
 
-Then you can login as `user@example.com` with the password `password`
+Then you can login as `user@example.com` with the password `password`.
 

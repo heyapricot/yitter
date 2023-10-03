@@ -13,7 +13,7 @@ User.create!({
     password: "password",
   })
 
-  sentence_count = Random.rand(10..50)
+  sentence_count = Random.rand(10..20)
   post = user.posts.create!({
     content: Faker::Lorem.paragraph(sentence_count: sentence_count),
   })
