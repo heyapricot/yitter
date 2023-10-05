@@ -40,7 +40,7 @@
 
     <hr>
     <% post.comments.each do |comment| %>
-      <%= render partial: 'comment', locals: { comment: comment } %>
+      <%= render partial: 'posts/comment', locals: { comment: comment } %>
     <% end %>
   </div>
 </div>
