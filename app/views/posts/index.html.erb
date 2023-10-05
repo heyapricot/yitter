@@ -1,29 +1,25 @@
+<div id="top-card" class='mx-auto container row'>
+  <div class='col-8'>
+    <div class="card p-3">
+      <h1 class="header-title">
+        Hey <%= current_user.name %>,
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="header-subtitle">
+        Read and like posts from your network
+      </p>
+
+      <p id="likes-count">
+        Remaining likes: <%= (User::LIKE_LIMIT - current_user.likes_count) %>
+      </p>
+    </div>
+  </div>
+</div>
 <div class='mx-auto container row'>
   <div class='col-8'>
-    <div class="header">
-      <div class="header-body">
-
-        <!-- Title -->
-        <h1 class="header-title">
-          Hey <%= current_user.name %>, 
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="header-subtitle">
-          Read and like posts from your network
-        </p>
-
-        <p id="likes-count">
-          Remaining likes: <%= (User::LIKE_LIMIT - current_user.likes_count) %>
-        </p>
-      </div>
-    </div>
-
-    <%= render partial: 'post', collection: @posts, as: :post, locals: { user: current_user } %>
-  </div>
-
-  <div class='col-4 mt-3'>
-    <div class='border border-dark w-100' style='height: 500px; border-style: dashed !important'>
+    <div class="timeline">
+      <%= render partial: 'post', collection: @posts, as: :post, locals: { user: current_user } %>
     </div>
   </div>
 </div>
