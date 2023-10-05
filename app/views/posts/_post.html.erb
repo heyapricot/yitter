@@ -32,6 +32,7 @@
         <div class="col">
           <div class="border border-dark" style='width: 200px; height: 20px; border-style: dashed !important'>
             <!-- Like button -->
+            <%= button_to "#{post.likes.where(user: current_user).exists? ? "Unlike" : "Like"}", post_like_path(post), method: :patch  %>
           </div>
         </div>
       </div>

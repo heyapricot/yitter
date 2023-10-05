@@ -12,12 +12,14 @@
         <p class="header-subtitle">
           Read and like posts from your network
         </p>
+
+        <p>
+          Remaining likes: <%= (User::LIKE_LIMIT - current_user.likes_count) %>
+        </p>
       </div>
     </div>
 
-    <% @posts.each do |post| %>
-      <%= render partial: 'post', locals: { post: post } %>
-    <% end %>
+    <%= render partial: 'post', collection: @posts, as: :post, locals: { user: current_user } %>
   </div>
 
   <div class='col-4 mt-3'>
