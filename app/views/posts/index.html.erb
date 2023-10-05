@@ -1,21 +1,4 @@
-<div id="top-card" class='mx-auto container row'>
-  <div class='col-8'>
-    <div class="card p-3">
-      <h1 class="header-title">
-        Hey <%= current_user.name %>,
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="header-subtitle">
-        Read and like posts from your network
-      </p>
-
-      <p id="likes-count">
-        Remaining likes: <%= (User::LIKE_LIMIT - current_user.likes_count) %>
-      </p>
-    </div>
-  </div>
-</div>
+<%= render partial: "top_card", locals: { name: current_user.name, remaining_likes_quantity: User::LIKE_LIMIT - current_user.likes.count, errors: nil } %>
 <div class='mx-auto container row'>
   <div class='col-8'>
     <div class="timeline">
