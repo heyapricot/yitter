@@ -1,0 +1,20 @@
+<div id="top-card" class='mx-auto container row'>
+  <div class='col-8'>
+    <div class="card p-3">
+      <h1 class="header-title">
+        Hey <%= name %>,
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="header-subtitle">
+        Read and like posts from your network
+      </p>
+
+      <div id="likes-count" class="h6">
+        <span class="text-uppercase text-secondary">Remaining likes: </span>
+        <%= remaining_likes_quantity %>
+      </div>
+      <%= tag.p errors if errors %>
+    </div>
+  </div>
+</div>

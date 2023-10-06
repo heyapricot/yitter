@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_person_name
 
   has_many :posts, dependent: :destroy
+  has_many :likes
 
   validates_presence_of :first_name, :last_name
+
+  LIKE_LIMIT = 5
 end
