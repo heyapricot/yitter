@@ -1,4 +1,4 @@
-<div class="comment my-4">
+<div class="comment my-4" id="<%= dom_id comment %>">
   <div class="row">
     <div class="col-auto">
 
@@ -32,6 +32,9 @@
 
         <div class="border border-dark" style='width: 200px; height: 20px; border-style: dashed !important'>
           <!-- Likes -->
+          <%= button_to post_like_path(comment.post, comment_id: comment.id), method: :patch, class: "btn btn-primary"  do %>
+            <%= "#{comment.likes.where(user: current_user).exists? ? "👎 Unlike" : "👍 Like"}" %>
+          <% end %>
         </div>
       </div>
     </div>

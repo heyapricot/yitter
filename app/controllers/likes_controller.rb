@@ -11,7 +11,7 @@ class LikesController < ApplicationController
 
     turbo_streams = [
       turbo_stream.replace("top-card", partial: "posts/top_card", locals: { name: current_user.name, remaining_likes_quantity: User::LIKE_LIMIT - current_user.likes.count, errors: errors } ),
-      turbo_stream.replace(dom_id(post), partial: "posts/post", locals: { post: post })
+      turbo_stream.replace(dom_id(resource), partial: "posts/#{resource_name}", locals: { "#{resource_name}".to_sym => resource })
     ]
     
     render turbo_stream: turbo_streams
@@ -20,10 +20,19 @@ class LikesController < ApplicationController
   private
 
   def likes
-    @likes ||= post.likes.where(user: current_user)
+    @likes ||= resource.likes.where(user: current_user)
   end
 
-  def post
-    @post ||= Post.find(params[:post_id])
+  def resource
+    post = Post.find(params[:post_id])
+    @resource ||= if params[:comment_id]
+                    post.comments.find(params[:comment_id])
+                  else
+                    post
+                  end
+  end
+
+  def resource_name
+    @resource_name ||= resource.class.name.downcase
   end
 end

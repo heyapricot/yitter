@@ -30,10 +30,9 @@
     <div class="mb-3">
       <div class="row">
         <div class="col">
-          <div class="border border-dark" style='width: 200px; height: 20px; border-style: dashed !important'>
-            <!-- Like button -->
-            <%= button_to "#{post.likes.where(user: current_user).exists? ? "Unlike" : "Like"}", post_like_path(post), method: :patch  %>
-          </div>
+          <%= button_to post_like_path(post), method: :patch, class: "btn btn-primary"  do %>
+            <%= "#{post.likes.where(user: current_user).exists? ? "👎 Unlike" : "👍 Like"}" %>
+          <% end %>
         </div>
       </div>
     </div>
